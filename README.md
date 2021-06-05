@@ -7,12 +7,12 @@ The backend service for interacting with project challenge database.
 Before you start, please check that the following are installed:
 
 - python3
-    ```
+    ```bash
     $ python3 --version
     ```
 
 - pip3
-    ```
+    ```bash
     $ pip3 --version
     ```
 
@@ -24,13 +24,13 @@ Virtual environments in Python allow us to download Python libraries (also known
 
 To install `virtualenv` run:
 
-```
+```bash
 $ pip3 install virtualenv
 ```
 
 Setup `virtualenv` in this project:
 
-```
+```bash
 $ cd challenge-api/
 $ virtualenv venv
 ```
@@ -45,7 +45,7 @@ Whenever you develop on this project, please run through the following process!
 
 1. Activate `virtualenv`
 
-    ```
+    ```bash
     $ source venv/bin/activate
     ```
 
@@ -55,7 +55,7 @@ Whenever you develop on this project, please run through the following process!
 
 1. Install any Python packages you may need
 
-    ```
+    ```bash
     $ pip3 install <package_name>
     ```
     Example:
@@ -65,6 +65,45 @@ Whenever you develop on this project, please run through the following process!
 
 1. When you are done developing, exit the virtual environment like so
 
-    ```
+    ```bash
     $ deactivate
+    ```
+
+## Running the API
+
+Follow these steps to run the Flask API server
+
+1. Activate `virtualenv`
+
+    ```bash
+    $ source venv/bin/activate
+    ```
+
+1. If you haven't alerady, install the `flask` package
+
+    ```bash
+    $ pip3 install flask
+    ```
+
+1. Run the server
+
+    ```bash
+    $ python3 api.py
+    ```
+    
+    Alternatively, you can also run it like this:
+
+    ```bash
+    $ export FLASK_APP=api.py
+    $ flask run
+    ## Or if you want to be fancy
+    $ FLASK_APP=api.py flask run
+    ```
+
+1. Test the server
+
+    ```bash
+    $ curl http://localhost:5000/
+    # should return the following
+    > Hello, from Challenge API!
     ```
