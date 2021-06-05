@@ -31,6 +31,7 @@ $ pip3 install virtualenv
 Setup `virtualenv` in this project:
 
 ```bash
+$ git clone git@github.com:iusmumn/challenge-api.git
 $ cd challenge-api/
 $ virtualenv venv
 ```
