@@ -30,19 +30,29 @@ $ pip3 install virtualenv
 
 Setup `virtualenv` in this project:
 
+**Mac with Intel chip**
+
 ```bash
 $ git clone git@github.com:iusmumn/challenge-api.git
 $ cd challenge-api/
 $ virtualenv venv
 ```
 
-You will also notice that a `venv/` directory was created. This is where all your future Python packages for this project will be downloaded to from now on!
+**Mac with Apple chip** _(Or if `virtualenv` just isn't working on your machine)_
+
+```bash
+$ git clone git@github.com:iusmumn/challenge-api.git
+$ cd challenge-api/
+$ python3 -m venv venv/
+```
+
+You will notice that a `venv/` directory was created. This is where all your future downloaded Python packages for this project will be stored from now on!
 
 _Note: This only has to be done once. No need to do it again when developing._
 
-### Usage
+### Using Virtual Environments
 
-Whenever you develop on this project, please run through the following process!
+EVERY TIME you develop on this project, please run through the following process!
 
 1. Activate `virtualenv`
 
