@@ -90,7 +90,7 @@ Follow these steps to run the Flask API server
     $ source venv/bin/activate
     ```
 
-1. If you haven't alerady, install the `flask` package
+1. If you haven't already, install the `flask` package
 
     ```bash
     $ pip3 install flask
@@ -117,4 +117,32 @@ Follow these steps to run the Flask API server
     $ curl http://localhost:5000/
     # should return the following
     > Hello, from Challenge API!
+    ```
+
+## Running and accessing the database
+
+Follow these steps to run the Postgres database server
+
+1. Turn on Docker and ensure it is running on your machine
+
+1. Open your terminal and `cd` to this project
+
+1. Run the database server (it usually takes no more than a minute to start)
+
+    ```bash
+    $ docker-compose up
+    ```
+
+    You should see this log statement which indicates the database server is ready
+
+    ```bash
+    LOG:  database system is ready to accept connections
+    ```
+
+1. Open PgAdmin4 and connect to the database
+
+1. Shutdown database server with <kbd>CTRL</kbd>+<kbd>C</kbd> in the original terminal session
+
+    ```bash
+    $ docker-compose down -v
     ```
