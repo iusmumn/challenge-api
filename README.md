@@ -139,7 +139,23 @@ Follow these steps to run the Postgres database server
     LOG:  database system is ready to accept connections
     ```
 
-1. Open PgAdmin4 and connect to the database
+1. Open PgAdmin4 and follow the screenshots below:
+
+    1. Click the **Add New Server** icon
+
+        ![Add New Server](assets/images/1_1.png?raw=true "Add New Server")
+
+    1. Add `projectchallengedb` as the server name (this is from the `docker-compose.yaml` file)
+
+        ![Create A Server](assets/images/1_2a.png?raw=true "Create A Server")
+
+    1. Fill out the connection details as follows
+
+        ![Connection Details](assets/images/1_2b.png?raw=true "Connection Details")
+
+    1. Expand the database icon on left-side panel to see our database tables
+
+        ![Left-side pane](assets/images/1_3.png?raw=true "Left-side panel")
 
 1. Shutdown database server with <kbd>CTRL</kbd>+<kbd>C</kbd> in the original terminal session
 
