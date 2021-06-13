@@ -149,7 +149,7 @@ Follow these steps to run the Postgres database server
 
         ![Create A Server](assets/images/1_2a.png?raw=true "Create A Server")
 
-    1. Fill out the connection details as follows
+    1. Fill out the connection details as follows (password is also `projectchallengedb`)
 
         ![Connection Details](assets/images/1_2b.png?raw=true "Connection Details")
 
