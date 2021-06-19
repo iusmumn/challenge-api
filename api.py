@@ -1,3 +1,5 @@
+import db
+import json
 from flask import Flask
 app = Flask(__name__)
 
@@ -10,6 +12,14 @@ def hello_world():
 def health():
     """A health endpoint to check if the api is running"""
     return 'Ok!!!'
+
+@app.route('/users')
+def users():
+    """A users endpoint to grab user data from the database"""
+    print("Grabbing user data from the database")
+    conn = db.connect()
+    users = db.get_users(conn)
+    return json.dumps(users)
 
 if __name__ == '__main__':
     app.run()
