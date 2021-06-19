@@ -22,5 +22,13 @@ def users():
     users = db.get_users(conn)
     return json.dumps(users)
 
+@app.route('/users')
+def users():
+    """A user endpoint to grab user data from the database"""
+    print("Grabbing user data from database")
+    conn = db.connect()
+    users = db.get_users(conn)
+    return json.dumps(users)
+
 if __name__ == '__main__':
     app.run()
