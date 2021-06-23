@@ -1,3 +1,4 @@
+from api import tasks
 import db_config as config
 import psycopg2
 
@@ -30,6 +31,34 @@ def get_users(conn):
         user_dictionary = db_row_to_dict_user(row)
         users.append(user_dictionary)        
     return users
+
+def get_teams(conn):
+    """Grab a list of temas from the database."""
+    """initiate a new list of teams"""
+    teams = []
+    """interact with database"""
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM teams;')
+    """what we fetch is sloppy, so we do a for loop to manipualte each row"""
+    for row in cur.fetchall():
+        team_dictionary = db_row_to_dict_user(row)
+        teams.append(team_dictionary)
+
+    return teams
+
+def get_tasks(conn):
+    """Grab a list of tasks from the database."""
+    """initiate a new list of tasks"""
+    tasks = []
+    """interact with database"""
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM tasks;')
+    """what we fetch is sloppy, so we do a for loop to manipualte each row"""
+    for row in cur.fetchall():
+        task_dictionary = db_row_to_dict_user(row)
+        tasks.append(task_dictionary)
+        
+    return tasks
 
 def db_row_to_dict_user(row: tuple) -> dict:
     """Helper function to convert a tuple of data into a dict
