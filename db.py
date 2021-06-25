@@ -60,6 +60,23 @@ def get_tasks(conn):
         
     return tasks
 
+def get_challenges(conn):
+    """Grab a list of challenges from the database.
+
+    Arguments:
+    conn: psycopg2.extensions.connection object
+
+    Returns:
+    A list of python dicts containing challenges data
+    """
+    challenges = []
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM challenges;')
+    for row in cur.fetchall():
+        challenges_dictionary = db_row_to_dict_challenges(row)
+        challenges.append(challenges_dictionary)        
+    return challenges
+
 def db_row_to_dict_user(row: tuple) -> dict:
     """Helper function to convert a tuple of data into a dict
 
@@ -99,5 +116,14 @@ def db_row_to_dict_task(row: tuple) -> dict:
         ]
     return dict(zip(column_names, list(row)))
 
+def db_row_to_dict_challenges(row: tuple) -> dict:
+    """Helper function to convert a tuple of data into a dict
 
+    Arguments:
+    row: tuple of challenges data
 
+    Returns:
+    A dict with db columns as the dict keys
+    """
+    column_names = ["id", "challenge_id", "name", "status", "leader", "start_date", "end_date"]
+    return dict(zip(column_names, list(row)))
