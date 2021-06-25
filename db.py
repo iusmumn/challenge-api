@@ -61,7 +61,7 @@ def get_tasks(conn):
     return tasks
 
 def get_challenges(conn):
-    """Grab a list of challenges from the database.
+    """Grab a list of challenges from the database
 
     Arguments:
     conn: psycopg2.extensions.connection object
