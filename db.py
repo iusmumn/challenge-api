@@ -11,7 +11,7 @@ def connect():
         user = config.dbuser,
         password = config.dbpassword,
         host = config.dbhost,
-        port = '5432'
+        port = '6666'
     )
 def get_users(conn):
     """Grab a list of users from the database.
