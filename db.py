@@ -1,5 +1,6 @@
 import db_config as config
 import psycopg2
+# wo shi lao ren
 def connect():
     """Initiate a postgres database connection using psycopg2
     Returns:
