@@ -21,5 +21,13 @@ def users():
     users = db.get_users(conn)
     return json.dumps(users)
 
+@app.route('/challenges')
+def challenges():
+    """A users endpoint to grab user data from the database"""
+    print("Grabbing challenge data from databse!")
+    conn = db.connect()
+    challenges = db.get_challenges(conn)
+    return json.dumps(challenges)
+
 if __name__ == '__main__':
     app.run()
