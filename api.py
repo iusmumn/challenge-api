@@ -16,14 +16,6 @@ def health():
 
 @app.route('/users')
 def users():
-    """A users endpoint to grab user data from the database"""
-    print("Grabbing user data from database")
-    conn = db.connect()
-    users = db.get_users(conn)
-    return json.dumps(users)
-
-@app.route('/users')
-def users():
     """A user endpoint to grab user data from the database"""
     print("Grabbing user data from the database...")
     conn = db.connect()
@@ -45,6 +37,13 @@ def tasks():
     conn = db.connect()
     tasks = db.get_tasks(conn)
     return json.dumps(tasks)
+@app.route('/challenges')
+def challenges():
+    """A challenges endpoint to grab challenge data from the datapages"""
+    print("Grabbing challenge data from database")
+    conn = db.connect()
+    challenges = db.get_challenges(conn)
+    return json.dumps(challenges)
 
 if __name__ == '__main__':
     app.run()
